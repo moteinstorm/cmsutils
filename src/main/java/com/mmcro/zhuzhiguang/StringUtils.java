@@ -13,18 +13,24 @@ import java.util.regex.Pattern;
 public class StringUtils {
 	
 	/**
-	 * 
+	 * (1)将\n\r替换成一个\n。（2分）
+(2)将\n结尾的这行文本用<p></p>标签包起来。（6分）
+(3)将单个\r字符使用<br/>标签替换。（2分）
+
 	 * @param src
 	 * @return
 	 */
 	public static String toHtml(String src) {
 		
-		String[] strings = src.split("\\\r");
+		String string = src.replaceAll("\\\r\n", "\n");
+		string = string.replaceAll("\\\r", "<br/>");
+		String[] split = string.split("\\\n");
 		StringBuilder sb = new StringBuilder();
-		for (String string : strings) {
-			sb.append("<p>").append(string).append("</p>");
+		for (int i = 0; i < split.length; i++) {
+			sb.append("<p>").append(split[i]).append("</p>");
 		}
 		return sb.toString();
+		
 		
 		
 		
