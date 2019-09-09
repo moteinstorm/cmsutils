@@ -95,8 +95,9 @@ public class TestStringUtils {
 	
 	@Test
 	public void testHtml() {
-		String str = "kthsdfkjfs \\n  新片区聚焦高端制造 \\n A新片区聚 \\n 焦高端制造 A新片区\\n聚焦高端制造 A新片区聚焦高端制造 A新片区聚焦高端制造 A";
+		String str = "  新片区聚\r\n焦高\r端制造 A";
 		String html = StringUtils.toHtml(str);
+		
 		System.out.println("html is " + html);
 		
 	}
