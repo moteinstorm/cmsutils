@@ -13,6 +13,24 @@ import java.util.regex.Pattern;
 public class StringUtils {
 	
 	/**
+	 * 
+	 * @param src
+	 * @return
+	 */
+	public static String toHtml(String src) {
+		
+		String[] strings = src.split("\\\r");
+		StringBuilder sb = new StringBuilder();
+		for (String string : strings) {
+			sb.append("<p>").append(string).append("</p>");
+		}
+		return sb.toString();
+		
+		
+		
+	}
+	
+	/**
 	 *  
 	 * @param str
 	 * @return  

@@ -98,11 +98,11 @@ public class TestStringUtils {
 }
 
 class news{
-	
+	/*
 	Integer id;
 	title
 	url
 	score
-	created
+	created*/
 	
 }
